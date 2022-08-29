@@ -11,12 +11,11 @@ import SwiftUI
 struct HomeViewRow: View {
     
     //doesnt have access to module, so want to pass in all arguments requiring module elements
-    var image: String
-    var title: String
-    var description: String
-    var count: String
-    var time: String
-    
+    var image:String
+    var title:String
+    var description:String
+    var count:String
+    var time:String
     
     var body: some View {
         
@@ -31,7 +30,6 @@ struct HomeViewRow: View {
             
             HStack {
                 //image
-                //TODO: change hardcoding
                 Image(image)
                     .resizable()
                     .frame(width: 116, height: 116)
@@ -48,6 +46,7 @@ struct HomeViewRow: View {
                     //description
                     Text(description)
                         .padding(.bottom, 20)
+                        .font(.caption)
                     
                     //icons
                     HStack {
@@ -57,7 +56,7 @@ struct HomeViewRow: View {
                             .resizable()
                             .frame(width: 15, height: 15)
                         Text(count)
-                            .font(.caption)
+                            .font(Font.system(size: 10))
                         
                         Spacer()
                         
@@ -66,7 +65,7 @@ struct HomeViewRow: View {
                             .resizable()
                             .frame(width: 15, height: 15)
                         Text(time)
-                            .font(.caption)
+                            .font(Font.system(size: 10))
                         
                     }
                     
@@ -83,6 +82,6 @@ struct HomeViewRow: View {
 
 struct HomeViewRow_Previews: PreviewProvider {
     static var previews: some View {
-        HomeViewRow(image: "swift", title: "Learn Swift", description: "example description", count: "10 Lessons", time: "2 Hours")
+        HomeViewRow(image: "swift", title: "Learn Swift", description: "some description", count: "10 Lessons", time: "2 Hours")
     }
 }

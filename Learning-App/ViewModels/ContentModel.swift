@@ -15,10 +15,15 @@ class ContentModel: ObservableObject {
     //does not need to be published bc will not be changed after first initialization
     var styleData: Data?
     
+    //keep track of selected module
+    @Published var currentModule: Module?
+    var currentModuleIndex = 0
+    
     init() {
         getLocalData()
     }
     
+    //MARK: data methods
     //parse the JSON and style data
     func getLocalData() {
         
@@ -54,4 +59,19 @@ class ContentModel: ObservableObject {
         }
     }
     
+    //MARK: module navigation methods
+    func beginModule(_ moduleId: Int){
+        
+        //find index
+        for index in 0..<modules.count {
+            if modules[index].id == moduleId {
+                //found the matching module
+                currentModuleIndex = index
+                break
+            }
+        }
+        
+        //set the current module
+        currentModule = modules[currentModuleIndex]
+    }
 }
