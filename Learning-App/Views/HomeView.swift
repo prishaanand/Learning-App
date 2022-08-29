@@ -27,7 +27,7 @@ struct HomeView: View {
                             VStack (alignment: .leading, spacing: 20) {
                                 
                                 //pass which module user is in to the ContentView
-                                NavigationLink {
+                                NavigationLink(tag: module.id, selection: $model.currentContentSelected) {
                                     ContentView()
                                         .onAppear {
                                             model.beginModule(module.id)
