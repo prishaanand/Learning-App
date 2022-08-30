@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B19B42BB28BDCCB60054A2D9 /* TestResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19B42BA28BDCCB60054A2D9 /* TestResultView.swift */; };
 		B1CA35D228BBFF6400F98BBB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA35D128BBFF6400F98BBB /* HomeView.swift */; };
 		B1CA35D428BBFF6800F98BBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1CA35D328BBFF6800F98BBB /* Assets.xcassets */; };
 		B1CA35D728BBFF6800F98BBB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1CA35D628BBFF6800F98BBB /* Preview Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B19B42BA28BDCCB60054A2D9 /* TestResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultView.swift; sourceTree = "<group>"; };
 		B1CA35CC28BBFF6400F98BBB /* Learning-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learning-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1CA35D128BBFF6400F98BBB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B1CA35D328BBFF6800F98BBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				B1CA361C28BC6FE100F98BBB /* CodeTextView.swift */,
 				B1CA365628BD3B3000F98BBB /* RectangleCard.swift */,
 				B1CA365C28BD49FA00F98BBB /* TestView.swift */,
+				B19B42BA28BDCCB60054A2D9 /* TestResultView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1CA365D28BD49FA00F98BBB /* TestView.swift in Sources */,
+				B19B42BB28BDCCB60054A2D9 /* TestResultView.swift in Sources */,
 				B1CA35D228BBFF6400F98BBB /* HomeView.swift in Sources */,
 				B1CA35ED28BC2F1A00F98BBB /* HomeViewRow.swift in Sources */,
 				B1CA35EF28BC332C00F98BBB /* ContentView.swift in Sources */,

@@ -114,9 +114,6 @@ struct TestView: View {
                         }
                     }
                     
-                    
-                    
-                    
                 } label: {
                     ZStack {
                         RectangleCard(color: .green)
@@ -130,15 +127,15 @@ struct TestView: View {
                 }
                 //havent selected an answer, so cant submit
                 .disabled(selectedAnswerIndex == nil)
-
-                
-                
             }
             .navigationBarTitle("\(model.currentModule?.category ?? "") Test")
         }
         else {
-            //test hasn't loaded yet
-            ProgressView()
+            //intial approach - test hasn't loaded yet
+            //ProgressView()
+            
+            //final approach - show results view
+            TestResultView(numCorrect: numCorrect)
         }
         
     }
