@@ -9,8 +9,6 @@ import Foundation
 
 class ContentModel: ObservableObject {
     
-    //TODO: Might need to fix the ordering of the properities/vars
-    
     //update view code according to parsed JSON data
     @Published var modules = [Module]()
     
@@ -25,11 +23,16 @@ class ContentModel: ObservableObject {
     @Published var currentLesson: Lesson?
     var currentLessonIndex = 0
     
+    //keep track of selected question
+    @Published var currentQuestion: Question?
+    var currentQuestionIndex = 0
+    
     //current lesson explanation
-    @Published var lessonDescription = NSAttributedString()
+    @Published var codeText = NSAttributedString()
     
     //current selected content and test
     @Published var currentContentSelected:Int?
+    @Published var currentTestSelected:Int? 
     
     init() {
         getLocalData()
@@ -100,7 +103,7 @@ class ContentModel: ObservableObject {
         //set the current lesson
         currentLesson = currentModule!.content.lessons[currentLessonIndex]
         //set explanation for that lesson
-        lessonDescription = addStyling(currentLesson!.explanation)
+        codeText = addStyling(currentLesson!.explanation)
         
     }
     
@@ -113,7 +116,7 @@ class ContentModel: ObservableObject {
             //set the current lesson property
             currentLesson = currentModule!.content.lessons[currentLessonIndex]
             //set explanation for that lesson
-            lessonDescription = addStyling(currentLesson!.explanation)
+            codeText = addStyling(currentLesson!.explanation)
         }
         else {
             //out of range, reset lesson state
@@ -131,6 +134,21 @@ class ContentModel: ObservableObject {
         else {
             return false
         }
+    }
+    
+    //set the current module + question
+    func beginTest(_ moduleId:Int) {
+        
+        beginModule(moduleId)
+        currentQuestionIndex = 0
+        
+        //set current question to first one, if there are q's
+        if currentModule?.test.questions.count ?? 0 > 0 {
+            currentQuestion = currentModule?.test.questions[currentQuestionIndex]
+            //set the content question as well
+            codeText = addStyling(currentQuestion!.content)
+        }
+        
     }
     
     //MARK: Code Styling

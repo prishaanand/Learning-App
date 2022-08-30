@@ -38,7 +38,7 @@ struct ContentView: View {
             .accentColor(.black)
             .padding()
             //title is empty string if no module is set
-            .navigationTitle("Learn \(model.currentModule?.category ?? "")")
+            .navigationBarTitle("Learn \(model.currentModule?.category ?? "")")
             
         }
         

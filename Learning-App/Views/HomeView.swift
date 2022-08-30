@@ -39,8 +39,15 @@ struct HomeView: View {
                                     
                                 }
                                 
-                                //Test Card -- duplicates lot of code so use a subview
-                                HomeViewRow(image: module.test.image, title: "\(module.category) Test", description: module.test.description, count: " \(module.test.questions.count) Questions", time: module.test.time)
+                                NavigationLink(tag: module.id, selection: $model.currentTestSelected) {
+                                    TestView()
+                                        .onAppear() {
+                                            model.beginTest(module.id)
+                                        }
+                                } label: {
+                                    //Test Card -- duplicates lot of code so use a subview
+                                    HomeViewRow(image: module.test.image, title: "\(module.category) Test", description: module.test.description, count: " \(module.test.questions.count) Questions", time: module.test.time)
+                                }
                             }
                             
                             

@@ -23,6 +23,7 @@
 		B1CA35F828BC4D9A00F98BBB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA35F728BC4D9A00F98BBB /* Constants.swift */; };
 		B1CA361D28BC6FE100F98BBB /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA361C28BC6FE100F98BBB /* CodeTextView.swift */; };
 		B1CA365728BD3B3000F98BBB /* RectangleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA365628BD3B3000F98BBB /* RectangleCard.swift */; };
+		B1CA365D28BD49FA00F98BBB /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA365C28BD49FA00F98BBB /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		B1CA35F728BC4D9A00F98BBB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B1CA361C28BC6FE100F98BBB /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		B1CA365628BD3B3000F98BBB /* RectangleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleCard.swift; sourceTree = "<group>"; };
+		B1CA365C28BD49FA00F98BBB /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				B1CA35F228BC49A900F98BBB /* ContentDetailView.swift */,
 				B1CA361C28BC6FE100F98BBB /* CodeTextView.swift */,
 				B1CA365628BD3B3000F98BBB /* RectangleCard.swift */,
+				B1CA365C28BD49FA00F98BBB /* TestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1CA365D28BD49FA00F98BBB /* TestView.swift in Sources */,
 				B1CA35D228BBFF6400F98BBB /* HomeView.swift in Sources */,
 				B1CA35ED28BC2F1A00F98BBB /* HomeViewRow.swift in Sources */,
 				B1CA35EF28BC332C00F98BBB /* ContentView.swift in Sources */,
