@@ -26,6 +26,7 @@ struct HomeView: View {
                     
                     Text("What would you like to do today?")
                         .padding(.leading, 20)
+                        .font(Font.custom("Avenir Light", size:20))
                     
                     ScrollView {
                         LazyVStack(alignment: .leading) {
@@ -56,6 +57,7 @@ struct HomeView: View {
                                     }
                                 }
                                 .padding(.bottom, 10)
+                                .font(Font.custom("Avenir Light", size:20))
                                 
                                 
                             }
@@ -66,6 +68,7 @@ struct HomeView: View {
                 }
                 
                 .navigationTitle("Get Started")
+                .font(Font.custom("Avenir Heavy", size:40))
                 //bug fix
                 .onChange(of: model.currentContentSelected) { newValue in
                     if newValue == nil {
