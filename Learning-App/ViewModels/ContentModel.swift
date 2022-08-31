@@ -35,7 +35,10 @@ class ContentModel: ObservableObject {
     @Published var currentTestSelected:Int? 
     
     init() {
+        //parse local included json data
         getLocalData()
+        //download remote json file + parse data
+        getRemoteData()
     }
     
     //MARK: data methods
@@ -72,6 +75,55 @@ class ContentModel: ObservableObject {
         catch {
             print("Parsing style data failed")
         }
+    }
+    
+    //download remote JSON + parse
+    func getRemoteData() {
+        
+        //string path
+        let urlString = "https://prishaanand.github.io/LearningApp-Data/data2.json"
+        
+        //create a url object
+        let url = URL(string: urlString)
+        
+        guard url != nil else {
+            //couldnt create url
+            return
+        }
+        
+        //create a url request object
+        let request = URLRequest(url: url!)
+        
+        //get the session & kick of the task
+        let session = URLSession.shared
+        
+        let dataTask = session.dataTask(with: request) { data, response, error in
+            //check if there is an error
+            guard error == nil else {
+                //error found
+                return
+            }
+            
+            do {
+                //create json decoder
+                let decoder = JSONDecoder()
+                //decode
+                let modules = try decoder.decode([Module].self, from: data!)
+                //append parsed modules into modules property
+                self.modules += modules
+                
+            }
+            catch {
+                //couldnt parse json
+                
+            }
+            
+            
+        }
+        
+        //kick of the dataTask
+        dataTask.resume()
+        
     }
     
     //MARK: module navigation methods
