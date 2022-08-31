@@ -15,32 +15,41 @@ struct ContentView: View {
     
     var body: some View {
         
-        ScrollView {
+        ZStack {
+            Image("learn-background2")
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea([.all])
             
-            LazyVStack {
+            ScrollView {
                 
-                //confirm that current module is set
-                if model.currentModule != nil {
+                LazyVStack {
                     
-                    ForEach(0..<model.currentModule!.content.lessons.count) { index in
+                    //confirm that current module is set
+                    if model.currentModule != nil {
                         
-                        NavigationLink {
-                            ContentDetailView()
-                                .onAppear {
-                                    model.beginLesson(index)
-                                }
-                        } label: {
-                            ContentViewRow(index: index)
+                        ForEach(0..<model.currentModule!.content.lessons.count) { index in
+                            
+                            NavigationLink {
+                                ContentDetailView()
+                                    .onAppear {
+                                        model.beginLesson(index)
+                                    }
+                            } label: {
+                                ContentViewRow(index: index)
+                            }
                         }
                     }
                 }
+                .accentColor(.black)
+                .padding()
+                //title is empty string if no module is set
+                .navigationBarTitle("Learn \(model.currentModule?.category ?? "")")
+                
             }
-            .accentColor(.black)
-            .padding()
-            //title is empty string if no module is set
-            .navigationBarTitle("Learn \(model.currentModule?.category ?? "")")
             
         }
+        
         
     }
 }

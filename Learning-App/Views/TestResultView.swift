@@ -37,36 +37,48 @@ struct TestResultView: View {
     
     var body: some View {
         
-        VStack {
+        ZStack {
+            Image("learn-background2")
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea([.all])
             
-            Spacer()
-            //dynamic text based on computed property
-            Text(resultHeading)
-                .font(.title)
-            
-            Spacer()
-            Text("You got \(numCorrect) out of \(model.currentModule?.test.questions.count ?? 0) questions correct.")
-            
-            Spacer()
-            Button {
-                //send user to home view
-                model.currentTestSelected = nil
-            } label: {
-                ZStack {
-                    RectangleCard(color: .green)
-                        .frame(height: 48)
-                    
-                    Text("Complete")
-                        .bold()
-                        .foregroundColor(.white)
+            VStack {
+                
+                Spacer()
+                //dynamic text based on computed property
+                Text(resultHeading)
+                    .font(.title)
+                    .foregroundColor(.white)
+                
+                Spacer()
+                Text("You got \(numCorrect) out of \(model.currentModule?.test.questions.count ?? 0) questions correct.")
+                    .foregroundColor(.white)
+                
+                Spacer()
+                Button {
+                    //send user to home view
+                    model.currentTestSelected = nil
+                } label: {
+                    ZStack {
+                        RectangleCard(color: .white)
+                            .frame(height: 48)
+                            .opacity(0.2)
                         
+                        Text("Complete")
+                            .bold()
+                            .foregroundColor(.white)
+                            
+                    }
+                
                 }
-            
-            }
-            .padding()
+                .padding()
 
-            Spacer()
+                Spacer()
+            }
         }
+        
+        
         
     }
 }

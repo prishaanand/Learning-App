@@ -23,6 +23,7 @@ struct HomeViewRow: View {
             
             Rectangle()
                 .foregroundColor(.white)
+                .opacity(0.8)
                 .cornerRadius(10)
                 .shadow(radius: 5)
                 //make rect size to any screen
@@ -38,18 +39,19 @@ struct HomeViewRow: View {
                 Spacer()
                 
                 //text
-                VStack (alignment: .leading, spacing: 10) {
+                VStack (spacing: 10) {
+                    
                     //headline
                     Text(title)
                         .bold()
-                    
+                     
                     //description
                     Text(description)
+                        .font(.caption2)
                         .padding(.bottom, 20)
-                        .font(.caption)
                     
                     //icons
-                    HStack {
+                    HStack  {
                         
                         //num lessons
                         Image(systemName: "text.book.closed")

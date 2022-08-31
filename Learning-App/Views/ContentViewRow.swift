@@ -32,6 +32,7 @@ struct ContentViewRow: View {
             
             Rectangle()
                 .foregroundColor(.white)
+                .opacity(0.8)
                 .cornerRadius(10)
                 .shadow(radius: 5)
                 .frame(height: 66)

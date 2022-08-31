@@ -40,7 +40,7 @@ struct TestView: View {
                                 
                             } label: {
                                 ZStack {
-
+                                    
                                     if submitted == false {
                                         if index == selectedAnswerIndex {
                                             RectangleCard(color: Color.gray)
@@ -78,8 +78,6 @@ struct TestView: View {
                                         
                                     }
 
-                                    
-                                    
                                     Text(model.currentQuestion!.answers[index])
                                 }
                             }
@@ -121,7 +119,7 @@ struct TestView: View {
                         Text(buttonText)
                             .bold()
                             .foregroundColor(.white)
-                            
+                        
                     }
                     .padding()
                 }
@@ -149,7 +147,7 @@ struct TestView: View {
         }
         
         if submitted == true {
-
+            
             if model.currentQuestionIndex + 1 == model.currentModule!.test.questions.count {
                 //last question
                 return "Finish"
@@ -161,7 +159,7 @@ struct TestView: View {
         else {
             return "Submit"
         }
-            
+        
     }
     
 }
