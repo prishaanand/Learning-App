@@ -143,7 +143,13 @@ struct TestView: View {
     //computed property to determine whether to display submit, next, or finish
     var buttonText: String {
         //check if answer has been submitted
+        
+        guard model.currentModule != nil else {
+            return ""
+        }
+        
         if submitted == true {
+
             if model.currentQuestionIndex + 1 == model.currentModule!.test.questions.count {
                 //last question
                 return "Finish"

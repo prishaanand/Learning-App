@@ -183,6 +183,11 @@ class ContentModel: ObservableObject {
     
     //check if current lesson has a following lesson, else it is the last lesson
     func hasNextLesson() -> Bool {
+        
+        guard currentModule != nil else {
+            return false
+        }
+        
         if currentLessonIndex + 1 < currentModule!.content.lessons.count {
             return true
         }
